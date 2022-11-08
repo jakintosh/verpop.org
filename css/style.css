@@ -1,0 +1,23 @@
+html {
+    background-color: lightgrey;
+}
+
+body {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 600px;
+    padding: 3em;
+    background-color: white;
+    box-shadow: darkgray 1em 1em 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+    body {
+        max-width: 85vw;
+        margin-left: 7.5vw;
+        margin-right: 7.5vw;
+        padding: 2em;
+    }
+}
