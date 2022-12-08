@@ -1,23 +1,209 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: sans-serif;
+    --padding: 3rem;
+    --fg-light: #f6f6f6;
+    --fg-dark: #16251d;
+    --impact: #2fa629;
+    --impact-light: #ABCA80;
+    --impact-dark: #2a868a;
+    --bg-light: #f6f6f6;
+    --bg-dark: #16251d;
+    --radius: 10pt;
+}
+
+
 html {
-    background-color: lightgrey;
+    color: var(--fg-dark);
+    background-color: var(--bg-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: var(--bg-dark);
+    }
 }
 
 body {
+    padding-bottom: 50pt;
+}
+
+.content {
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 600px;
-    padding: 3em;
-    background-color: white;
-    box-shadow: darkgray 1em 1em 0;
+    margin-top: 50pt;
+    margin-bottom: min();
+    max-width: 700px;
+    padding: var(--padding);
+    background-color: var(--impact);
+    box-shadow: var(--impact-dark) 1rem 1rem 0;
+    border-radius: var(--radius);
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 150%;
+    margin-bottom: 0;
+}
+
+section {
+    color: var(--fg-light);
+    background-color: var(--impact);
+    padding: calc(var(--padding) / 2);
+    margin-bottom: var(--padding);
+    border-radius: var(--radius);
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--bg-light);
+    padding: var(--padding);
+    color: var(--fg-dark);
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+header {
+    color: var(--fg-light);
+    background-color: var(--impact);
+    padding: calc(var(--padding) / 2);
+    margin-bottom: 1rem;
+    border-radius: var(--radius);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-block-start: 0;
+    margin-block-end: 0.5em;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-block-start: 0;
 }
 
 
+section>.button {
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+x-event {
+    display: block;
+    background-color: var(--impact-dark);
+    color: var(--fg-light);
+    padding: calc(var(--padding) / 2);
+    border: solid var(--fg-light) 1pt;
+    margin-bottom: 1rem;
+    border-radius: calc(var(--radius) / 2);
+
+}
+
+x-event:last-of-type {
+    margin-bottom: 0;
+}
+
+x-date {
+    display: inline-block;
+    margin-bottom: 0.75em;
+    font-size: 1.33rem;
+    font-weight: bold;
+    padding: 2pt 6pt;
+    background-color: var(--impact);
+    box-shadow: var(--impact-light) 3pt 3pt 0;
+    border-radius: 4pt;
+}
+
+x-title::before {
+    content: "What: ";
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+x-title {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+x-location::before {
+    content: "Where: ";
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+x-location {
+    display: block;
+    font-weight: bold;
+    color: var(--impact-light);
+}
+
+/* 
+nav {
+    position: absolute;
+    background-color: white;
+    left: 50px;
+    top: 100px;
+    padding: 1rem;
+}
+
+nav>a {
+    display: block;
+    padding: 0.5rem;
+    padding-right: 3rem;
+    color: var(--bg-dark);
+    text-decoration: none;
+    border-bottom: var(--bg-dark) solid 1pt;
+}
+
+nav>a:hover {
+    font-weight: bold;
+    border-bottom-width: 2pt;
+}
+*/
+
+.button {
+    display: inline-block;
+    color: var(--fg-light);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--impact-dark);
+    border: none;
+    border-radius: calc(0.75 * var(--padding));
+}
+
+.button:hover {
+    background-color: var(--impact-light);
+}
+
+.button:active {
+    background-color: var(--bg-dark);
+}
+
 @media screen and (max-width: 1024px) {
+    :root {
+        --padding: 1.5rem;
+    }
+
+    html {
+        background-color: var(--impact);
+    }
+
     body {
-        max-width: 85vw;
-        margin-left: 7.5vw;
-        margin-right: 7.5vw;
-        padding: 2em;
+        padding: 0;
+        margin: 0;
+    }
+
+    .content {
+        margin-top: 0;
+        box-shadow: none;
+        border-radius: 0;
     }
 }
