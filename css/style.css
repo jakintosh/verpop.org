@@ -89,6 +89,11 @@ h2 {
 section>.button {
     margin-top: 2rem;
     font-weight: bold;
+    margin-right: 1rem;
+}
+
+section>.button:last-of-type {
+    margin-right: 0;
 }
 
 x-event {
